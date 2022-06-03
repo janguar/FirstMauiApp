@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.VIews.Page1"  xmlns:viewmodel="clr-namespace:MauiApp1.ViewModels" 
-             x:DataType="viewmodel:Page1ViewModel"
-             Title="Page1">
-    <StackLayout>
-        <Label Text="{Binding Text}"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-    </StackLayout>
+<ContentPage
+	x:Class="MauiApp1.VIews.Page1"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:viewmodel="clr-namespace:MauiApp1.ViewModels"
+	Title="Page1"
+	x:DataType="viewmodel:Page1ViewModel">
+	<StackLayout>
+		<Label
+			Margin="10"
+			FontAttributes="Bold"
+			FontSize="32"
+			HorizontalOptions="Center"
+			Text="{Binding Text}"
+			VerticalOptions="Center" />
+
+		<Button
+			Margin="10,10"
+			Command="{Binding GoBackCommand}"
+			Text="Go Back" />
+	</StackLayout>
 </ContentPage>

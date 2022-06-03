@@ -16,16 +16,19 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		// Register Platform Specific
+		//builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 
+		// Register Navigation
 		builder.Services.AddSingleton<MainPage>();
-        builder.Services.AddSingleton<MainPageViewModel>();
+		builder.Services.AddSingleton<MainPageViewModel>();
 
-        builder.Services.AddTransient<Page1>();
-        builder.Services.AddTransient<Page1ViewModel>();
+		builder.Services.AddTransient<Page1>();
+		builder.Services.AddTransient<Page1ViewModel>();
 
-        builder.Services.AddTransient<Page2>();
-        builder.Services.AddTransient<Page2ViewModel>();
+		builder.Services.AddTransient<Page2>();
+		builder.Services.AddTransient<Page2ViewModel>();
 
-        return builder.Build();
+		return builder.Build();
 	}
 }
