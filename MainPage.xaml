@@ -10,7 +10,7 @@
             <Image Grid.ColumnSpan="2" Source="dotnet_bot.png" BackgroundColor="Transparent" Margin="10,10"></Image>
             <Entry Placeholder="Enter task" Grid.Row="1" Text="{Binding Text}"/>
             <Button Text="Add" Grid.Row="1" Grid.Column="1" Command="{Binding AddCommand}"/>
-            <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}">
+            <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}" SelectionMode="None">
                 <!--<CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Apples</x:String>
@@ -32,6 +32,12 @@
                             </SwipeView.LeftItems>
                             <Grid Padding="0,5">
                                 <Frame>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1"  
+                                                              Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, 
+                                                               Path=TapCommand}"
+                                                               CommandParameter="{Binding .}" />
+                                    </Frame.GestureRecognizers>
                                     <Label Text="{Binding .}" FontSize="24"/>
                                 </Frame>
                             </Grid>

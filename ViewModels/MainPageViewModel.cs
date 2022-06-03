@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MauiApp1.VIews;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -59,6 +60,13 @@ namespace MauiApp1.ViewModels
             if(Items.Contains(s))
                 Items.Remove(s);
            
+        }
+
+
+        [ICommand]
+        async void Tap(string s)
+        {
+           await Shell.Current.GoToAsync($"{nameof(Page1)}?Text={s}");
         }
 
 
